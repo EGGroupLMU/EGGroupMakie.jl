@@ -1,0 +1,4 @@
+[deps]
+CairoMakie = "13f3f980-e62b-5c42-98c6-ff1f3baf88f0"
+EGGroupMakie = "e944c24e-e3e5-4d5e-8fa5-a3772f1b1439"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
