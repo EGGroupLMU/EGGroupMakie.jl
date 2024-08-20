@@ -3,6 +3,10 @@ module EGGroupMakie
 using Makie: Label, Axis, Theme, Figure, GridLayout, Legend, with_theme
 using Makie.ColorSchemes: colorschemes
 
+export ThemePPT, ThemeClean
+export Title, Subtitle, Caption, AxLabel, TopLegend
+export skeleton
+
 const COLORMAP = colorschemes[:tableau_10].colors
 
 const SIZE_FULL = (1920, 1080)
@@ -11,6 +15,19 @@ const SIZE_TWO_THIRDS = (1280, 1080)
 const SIZE_60 = (1152, 1080)
 
 const WRAPSIZE = Dict(SIZE_FULL => 135)
+
+function ThemeClean()
+    Theme(
+        size=(1920, 1080),
+        fontsize=24,
+        figure_padding=(60, 100, 30, 30),
+        justification=:left,
+        Axis=(titlecolor=:grey20, titlealign=:left, titlesize=30, titlefont=:bold,
+            xtrimspine=true, ytrimspine=true, topspinevisible=false, rightspinevisible=false,
+            ygridstyle=:dash, xgridstyle=:dash, xminorgridvisible=true, yminorgridvisble=true, xminorgridstyle=:dash, yminorgridstyle=:dash),
+        Legend=(marker=:rect, markersize=28,),
+    )
+end
 
 function ThemePPT()
     Theme(
